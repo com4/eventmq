@@ -46,9 +46,13 @@ class handlers(object):
     STREAM_HANDLER = logging.StreamHandler
 
 
-def setup_logger(base_name, formatter=FORMAT_STANDARD,
+def setup_logger(base_name='', formatter=FORMAT_STANDARD,
                  handler=handlers.STREAM_HANDLER):
-
+    """
+    Args:
+        base_name (str): Name for the logger. Default: Empty string indicating
+            the root logger.
+    """
     logger = logging.getLogger(base_name)
     logger.setLevel(logging.DEBUG)
 
