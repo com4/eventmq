@@ -1,9 +1,49 @@
+<!doctype html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EventMQ $emq_version Dashboard</title>
-    <script src="/js/mithril.js"></script>
+    <script src="js/mithril.js"></script>
   </head>
   <body>
-    This is an HTML placeholder.
+    <script>
+     var Layout = {
+	 view: function(vnode) {
+	     console.debug(vnode)
+	     return m("main.layout", [
+		 m("nav.menu", [
+		     m("a[href='/schedulers']", {oncreate: m.route.link}, "Schedulers"),
+		     m("a[href='/job-managers']", {oncreate: m.route.link}, "Job Managers")
+		 ]),
+		 m("section", vnode.children)
+	     ])
+	 }
+     }
+     var SchedulerList = {
+	 view: function() {
+	     return m(".node-list", "Schedulers")
+	 }
+     }
+
+     var JobManagerList = {
+	 view: function() {
+	     return m(".node-list", "Job Managers")
+	 }
+     }
+
+     m.route(document.body, "/schedulers", {
+	 "/schedulers": {
+	     render: function() {
+		 return m(Layout, m(SchedulerList))
+	     }
+	 },
+	 "/job-managers": {
+	     render: function() {
+		 return m(Layout, m(JobManagerList))
+	     }
+	 }
+     })
+    </script>
   </body>
 </html>
