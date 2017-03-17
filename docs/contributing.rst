@@ -5,10 +5,12 @@ Contributing to EventMQ
 A few tips when working on the code
 
  * Use relative imports. If you use absolute imports then when you `import eventmq.exceptions` it's possible that you receive in return a different version of eventmq. exceptions installed somewhere else on the system.
+ * Log liberally. It's simple to control the output using the built in log levels, so use ``logger.debug`` liberally. This will make it much easier to track down problems when they occur in running systems.
 
 .. toctree::
    :maxdepth: 1
-   
+
    protocol
-   Source Code <https://github.com/enderlabs/eventmq>
-   Issues <https://github.com/enderlabs/eventmq/issues>
+   contributing/http_api
+   Source Code <https://github.com/eventmq/eventmq>
+   Issues <https://github.com/eventmq/eventmq/issues>
