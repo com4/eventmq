@@ -18,13 +18,13 @@
 Processes the requests for EventMQ's web based control panel.
 """
 import logging
-import re
-import os
 import mimetypes
+import os
+import re
 from string import Template
 
 from eventmq import __version__
-from . import urls
+from . import exceptions, urls
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 VALID_TEMPLATE_TYPES = ['text/html', ]
 
 
-def applicaiton(environ, start_response):
+def application(environ, start_response):
     """
     Manage HTTP requests for EventMQ's control panel
 
@@ -43,19 +43,40 @@ def applicaiton(environ, start_response):
     Returns:
         (list) Http content
     """
+    try:
+        return process_request(environ, start_response)
+    except exceptions.HttpError as e:
+        start_response(
+            '{} {}'.format(e.STATUS_CODE, e.REASON_PHRASE),
+            [('Content-Type', e.content_type)])
+        return e.response_body
+
+
+def process_request(environ, start_response):
+    """
+    Process a requested
+    Args:
+       environ (dict): WSGI environment
+       start_response (func): The function used to start the HTTP response.
+
+    Returns:
+        (list) Http content
+    """
     request_path = environ.get('PATH_INFO')
+    logger.debug('Requested PATH_INFO: {}'.format(request_path))
 
     # Check defined patterns
     for pattern, callable_path in urls.patterns:
         if re.search(pattern, request_path):
-            logger.debug(callable_path)
-
             start_response('200 OK', [('Content-Type', 'text/html')])
 
-            return ['asdf']
+            return [callable_path]
 
     # Fall back to the file system
-    normalized_path = urls.normalize_static_path(request_path)
+    try:
+        normalized_path = urls.normalize_static_path(request_path)
+    except ValueError as e:
+        raise exceptions.Http404(response_body=e.message)
 
     if os.path.exists(normalized_path):
         mimetype = mimetypes.guess_type(normalized_path)[0] or \
@@ -75,11 +96,4 @@ def applicaiton(environ, start_response):
 
         return [content]
 
-    return not_found_view(environ, start_response)
-
-
-def not_found_view(environ, start_response):
-    """
-    """
-    start_response('404 NOT FOUND', [('Content-Type', 'text/html')])
-    return ['404 Not Found']
+    raise exceptions.Http404(response_body='{} Not Found'.format(request_path))

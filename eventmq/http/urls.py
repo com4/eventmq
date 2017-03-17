@@ -36,20 +36,37 @@ def normalize_static_path(request_path):
        request_path (str): The suffix of the path that will be converted to a
            filesystem path. For example: ``/js/eventmq.js``
 
+    Raises:
+        ValueError: If the provided ``request_path`` is for a document outside
+            the defined document root then a ValueError is raised
+
     Returns:
         (str) Normalizes ``request_path`` to the corresponding filesystem path
             for static files.
     """
+    logger.debug('Normalizing requested path: {}'.format(request_path))
+    # Trailing slashes should return index.html
+    if request_path.endswith('/'):
+        request_path = '{}index.html'.format(request_path)
+        logger.debug('Request path ends with trailing slash. Appending '
+                     'index.html')
+
     # Leading slashes break os.path.join so strip it off if it exists.
     if request_path.startswith('/'):
         request_path = request_path[1:]
 
-    fs_path = os.path.normpath(os.path.join(DOCUMENT_ROOT, request_path))
+    logger.debug('Formatted request path: {}'.format(request_path))
 
+    fs_path = os.path.normpath(os.path.join(DOCUMENT_ROOT, request_path))
     base_dir = os.path.dirname(fs_path)
 
+    logger.debug('Normalized request path: {}'.format(fs_path))
+
+    # Make sure we aren't being asked to break out of our document root
     if not base_dir.startswith(DOCUMENT_ROOT):
-        raise ValueError('Requested path {} outside DOCUMENT_ROOT'.format(
+        logger.debug('Requested file {} is not in the document root'.format(
             fs_path))
+        raise ValueError('Requested path {} outside DOCUMENT_ROOT'.format(
+            request_path))
 
     return fs_path

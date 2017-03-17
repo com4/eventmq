@@ -57,5 +57,5 @@ if __name__ == "__main__":
     logger.info("Listening for new connections on http://{}:{}".format(
         host_addr, host_port))
 
-    server = make_server(host_addr, host_port, wsgi.applicaiton)
+    server = make_server(host_addr, host_port, wsgi.application)
     server.serve_forever()
