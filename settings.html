@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>settings – Settings Utilities &mdash; EventMQ 0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EventMQ 0 documentation" href="index.html"/>
+        <link rel="up" title="API Documentation" href="api.html"/>
+        <link rel="next" title="utils – Utilities" href="utils/index.html"/>
+        <link rel="prev" title="sender – Sender" href="sender.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EventMQ
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using EventMQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client.html"><code class="docutils literal"><span class="pre">client</span></code> &#8211; Client Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html"><code class="docutils literal"><span class="pre">exceptions</span></code> &#8211; Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jobmanager.html"><code class="docutils literal"><span class="pre">jobmanager</span></code> &#8211; Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poller.html"><code class="docutils literal"><span class="pre">poller</span></code> &#8211; Poller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="receiver.html"><code class="docutils literal"><span class="pre">receiver</span></code> &#8211; Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="router.html"><code class="docutils literal"><span class="pre">router</span></code> &#8211; Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sender.html"><code class="docutils literal"><span class="pre">sender</span></code> &#8211; Sender</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">settings</span></code> &#8211; Settings Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/index.html"><code class="docutils literal"><span class="pre">utils</span></code> &#8211; Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to EventMQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog_link.html">CHANGELOG</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EventMQ</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="api.html">API Documentation</a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">settings</span></code> &#8211; Settings Utilities</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-eventmq.settings"></span><div class="section" id="settings-settings-utilities">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">settings</span></code> &#8211; Settings Utilities<a class="headerlink" href="#settings-settings-utilities" title="Permalink to this headline">¶</a></h1>
+<p>Settings are defined in the <code class="xref py py-data docutils literal"><span class="pre">_CONFIG_DEFS</span></code> dictionary. They are organized
+by section. This dictionary is used to build the command line options with the
+helper scripts, and validate the options loaded from the command line and
+config files.</p>
+<p>To add a configuration option add an all caps name that describes it&#8217;s
+value. This is what you will reference when accessing the option from the
+<code class="docutils literal"><span class="pre">conf</span></code> object. The value of this key is another dictionary with the following
+options:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">default</span></code>: This is the default value for the option.</li>
+<li><code class="docutils literal"><span class="pre">long-arg</span></code>: This is the long version of the command line argument. It is
+required if you want to enable the option on the command line.</li>
+<li><code class="docutils literal"><span class="pre">short-arg</span></code>: This is the short version of the command line
+argument. Optional if you don&#8217;t need one.</li>
+<li><code class="docutils literal"><span class="pre">help</span></code>: Help text to be displayed when &#8211;help is passed</li>
+<li><code class="docutils literal"><span class="pre">nargs</span></code>: Number of arguments.
+- N (integer; N arguments gathered as a list)
+- ? (one argument gathered as a string)
+- * (all arguments gathered as a list)
+- + (all arguments gathered as a list. at least 1 argument is required.)</li>
+</ul>
+<p>For more information see:
+<a class="reference external" href="https://docs.python.org/2/library/argparse.html#the-add-argument-method">https://docs.python.org/2/library/argparse.html#the-add-argument-method</a></p>
+<dl class="class">
+<dt id="eventmq.settings.Conf">
+<em class="property">class </em><code class="descclassname">eventmq.settings.</code><code class="descname">Conf</code><span class="sig-paren">(</span><em>section=None</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.Conf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used as a singleton to expose configuration values to the rest of the app.</p>
+<p>Define <code class="docutils literal"><span class="pre">conf.section</span></code> to the config section this config is for in order
+to read the default values from that section. If section is <code class="docutils literal"><span class="pre">None</span></code> then
+only the global section will be scanned and you may end up with an
+<code class="docutils literal"><span class="pre">AttributeError</span></code> For example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conf</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">section</span> <span class="o">=</span> <span class="s1">&#39;jobmanager&#39;</span>
+
+<span class="nb">print</span> <span class="n">conf</span><span class="o">.</span><span class="n">QUEUES</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="eventmq.settings.Conf.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#eventmq.settings.Conf.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventmq.settings.Conf.reload">
+<code class="descname">reload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.Conf.reload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete and recreate the config instance object. This essentially resets
+the config to it&#8217;s default values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.settings.build_parser_arguments">
+<code class="descclassname">eventmq.settings.</code><code class="descname">build_parser_arguments</code><span class="sig-paren">(</span><em>parser</em>, <em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.build_parser_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add arguments to an <a class="reference external" href="https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">argparse.ArgumentParser</span></code></a> that are valid for the
+given <code class="docutils literal"><span class="pre">section</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>parser</strong> (<a class="reference external" href="https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">argparse.ArgumentParser</span></code></a>) &#8211; the argparser for the
+application.</li>
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the section of the config to generate arguments for.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.settings.load_settings_from_dict">
+<code class="descclassname">eventmq.settings.</code><code class="descname">load_settings_from_dict</code><span class="sig-paren">(</span><em>settings_dict</em>, <em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.load_settings_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load settings into conf from the provided dictionary. Generally this would
+be called after <a class="reference internal" href="#eventmq.settings.load_settings_from_file" title="eventmq.settings.load_settings_from_file"><code class="xref py py-func docutils literal"><span class="pre">load_settings_from_file()</span></code></a> to override any settings
+that may be loaded there. In practice this is used for the command line
+options.</p>
+<p>The dictonary&#8217;s key is the uppercase config name, and it&#8217;s value the config
+value. For example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;SUPER_DEBUG&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;DISABLE_HEARTBEATS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>settings_dict</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary containing the settings you wish to
+load.</li>
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The name of the config section these settings should be
+validated against.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.settings.load_settings_from_file">
+<code class="descclassname">eventmq.settings.</code><code class="descname">load_settings_from_file</code><span class="sig-paren">(</span><em>section='global'</em>, <em>file_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.load_settings_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import settings from the defined config file. This will import all the
+settings from the <code class="docutils literal"><span class="pre">global</span></code> section followed by the requested section. The
+default location is used unless it has been overridden via <code class="docutils literal"><span class="pre">file_path</span></code>
+(or set on <code class="docutils literal"><span class="pre">conf</span></code> elsewhere.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Name of the INI section to import</li>
+<li><strong>file_path</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Full filesystem path of the config file to load.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils/index.html" class="btn btn-neutral float-right" title="utils – Utilities" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sender.html" class="btn btn-neutral" title="sender – Sender" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, EventMQ Contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CHANGELOG &mdash; EventMQ 0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="EventMQ 0 documentation" href="index.html"/>
+        <link rel="prev" title="EventMQ Protocol Specification" href="protocol.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EventMQ
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using EventMQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to EventMQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CHANGELOG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#backwards-incompatible-changes">Backwards incompatible changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EventMQ</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>CHANGELOG</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/changelog_link.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>CHANGELOG<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<p>For upcoming releases see the milestone page: <a class="reference external" href="https://github.com/eventmq/eventmq/milestones">https://github.com/eventmq/eventmq/milestones</a></p>
+<div class="section" id="id1">
+<h2>0.4<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Update config file loading. Each device will load the <code class="docutils literal"><span class="pre">global</span></code> section followed by it&#8217;s own section of the provided config (router for emq-router, jobmanager for emq-jobmanager, etc)</li>
+<li>Allow configurations options to be set via command-line.</li>
+</ul>
+<div class="section" id="backwards-incompatible-changes">
+<h3>Backwards incompatible changes<a class="headerlink" href="#backwards-incompatible-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">emq-pubsub</span></code> has been renamed to <code class="docutils literal"><span class="pre">emq-publisher</span></code></li>
+<li><dl class="first docutils">
+<dt>Configuration: The name and section for the listening addresses has changed:</dt>
+<dd><ul class="first last">
+<li>Job Manager: <code class="docutils literal"><span class="pre">WORKER_ADDR</span></code> is now <code class="docutils literal"><span class="pre">CONNECT_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[jobmanager]</span></code> section</li>
+<li>Job Manager: <code class="docutils literal"><span class="pre">WORKER_ADDR_DEFAULT</span></code> is now <code class="docutils literal"><span class="pre">CONNECT_ADDR_DEFAULT</span></code> in the <code class="docutils literal"><span class="pre">[jobmanager]</span></code> section</li>
+<li>Job Manager: <code class="docutils literal"><span class="pre">WORKER_ADDR_FAILOVER</span></code> is now <code class="docutils literal"><span class="pre">CONNECT_ADDR_FAILOVER</span></code> in the <code class="docutils literal"><span class="pre">[jobmanager]</span></code> section</li>
+<li>Publisher: <code class="docutils literal"><span class="pre">PUBLISHER_FRONTEND_ADDR</span></code> is not <code class="docutils literal"><span class="pre">FRONTEND_LISTEN_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[publisher]</span></code> section</li>
+<li>Publisher: <code class="docutils literal"><span class="pre">PUBLISHER_BACKEND_ADDR</span></code> is not <code class="docutils literal"><span class="pre">BACKEND_LISTEN_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[publisher]</span></code> section</li>
+<li>Router: <code class="docutils literal"><span class="pre">FRONTEND_ADDR</span></code> is now <code class="docutils literal"><span class="pre">FRONTEND_LISTEN_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[router]</span></code> section</li>
+<li>Router: <code class="docutils literal"><span class="pre">BACKEND_ADDR</span></code> is now <code class="docutils literal"><span class="pre">BACKEND_LISTEN_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[router]</span></code> section</li>
+<li>Scheduler: <code class="docutils literal"><span class="pre">SCHEDULER_ADDR</span></code> is now <code class="docutils literal"><span class="pre">CONNECT_ADDR</span></code> in the <code class="docutils literal"><span class="pre">[scheduler]</span></code> section</li>
+<li><code class="docutils literal"><span class="pre">RQ_HOST</span></code> is now <code class="docutils literal"><span class="pre">REDIS_HOST</span></code></li>
+<li><code class="docutils literal"><span class="pre">RQ_PORT</span></code> is now <code class="docutils literal"><span class="pre">REDIS_PORT</span></code></li>
+<li><code class="docutils literal"><span class="pre">RQ_DB</span></code> is now <code class="docutils literal"><span class="pre">REDIS_DB</span></code></li>
+<li><code class="docutils literal"><span class="pre">RQ_PASSWORD</span></code> is now <code class="docutils literal"><span class="pre">REDIS_PASSWORD</span></code></li>
+<li><code class="docutils literal"><span class="pre">ADMINISTRATIVE_ADDR</span></code> is now <code class="docutils literal"><span class="pre">ADMINISTRATIVE_LISTEN_ADDR</span></code> in each respective section</li>
+<li><code class="docutils literal"><span class="pre">CONNECT_ADDR_DEFAULT</span></code> has been removed from the <code class="docutils literal"><span class="pre">[jobmanager]</span></code> section. HA will be retooled and added back in the High Availability Milestone.</li>
+<li><code class="docutils literal"><span class="pre">CONNECT_ADDR_FAILOVER</span></code> has been removed from the <code class="docutils literal"><span class="pre">[jobmanager]</span></code> section. HA will be retooled and added back in the High Availability Milestone.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configuration: Command line options for emq-jobmanager</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">--broker-addr</span></code> <code class="docutils literal"><span class="pre">-B</span></code> has been renamed to <code class="docutils literal"><span class="pre">--connect-addr</span></code> <code class="docutils literal"><span class="pre">-A</span></code></li>
+<li><code class="docutils literal"><span class="pre">--jobs</span></code> has been renamed to <code class="docutils literal"><span class="pre">--concurrent-jobs</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="protocol.html" class="btn btn-neutral" title="EventMQ Protocol Specification" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, EventMQ Contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

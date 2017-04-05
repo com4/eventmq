@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>timeutils – Time Utilites &mdash; EventMQ 0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="EventMQ 0 documentation" href="../index.html"/>
+        <link rel="up" title="utils – Utilities" href="index.html"/>
+        <link rel="next" title="Contributing to EventMQ" href="../contributing.html"/>
+        <link rel="prev" title="messages – Message Utilities" href="messages.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> EventMQ
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using EventMQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../client.html"><code class="docutils literal"><span class="pre">client</span></code> &#8211; Client Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">exceptions</span></code> &#8211; Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jobmanager.html"><code class="docutils literal"><span class="pre">jobmanager</span></code> &#8211; Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../poller.html"><code class="docutils literal"><span class="pre">poller</span></code> &#8211; Poller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../receiver.html"><code class="docutils literal"><span class="pre">receiver</span></code> &#8211; Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../router.html"><code class="docutils literal"><span class="pre">router</span></code> &#8211; Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sender.html"><code class="docutils literal"><span class="pre">sender</span></code> &#8211; Sender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../settings.html"><code class="docutils literal"><span class="pre">settings</span></code> &#8211; Settings Utilities</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">utils</span></code> &#8211; Utilities</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="classes.html"><code class="docutils literal"><span class="pre">classes</span></code> &#8211; Utility Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="devices.html"><code class="docutils literal"><span class="pre">devices</span></code> &#8211; Device Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="messages.html"><code class="docutils literal"><span class="pre">messages</span></code> &#8211; Message Utilities</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">timeutils</span></code> &#8211; Time Utilites</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to EventMQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_link.html">CHANGELOG</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">EventMQ</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API Documentation</a> &raquo;</li>
+      
+          <li><a href="index.html"><code class="docutils literal"><span class="pre">utils</span></code> &#8211; Utilities</a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">timeutils</span></code> &#8211; Time Utilites</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/utils/timeutils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-eventmq.utils.timeutils"></span><div class="section" id="timeutils-time-utilites">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">timeutils</span></code> &#8211; Time Utilites<a class="headerlink" href="#timeutils-time-utilites" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="eventmq.utils.timeutils.IntervalIter">
+<em class="property">class </em><code class="descclassname">eventmq.utils.timeutils.</code><code class="descname">IntervalIter</code><span class="sig-paren">(</span><em>start_value</em>, <em>interval_secs</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.utils.timeutils.IntervalIter" title="Permalink to this definition">¶</a></dt>
+<dd><p>represents an interval (in seconds) and it&#8217;s <cite>next()</cite> execution time</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd><p class="first"># interval of 5min using monotonic clock (assume it starts at 0 for the
+# sake of the example)
+interval = IntervalIter(monotonic, 300)
+# Py2</p>
+<p>interval.next()  # 300
+interval.next()  # 600</p>
+<p class="last"># Py3
+next(interval)  # 300
+next(interval)  # 600</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="eventmq.utils.timeutils.IntervalIter.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>start_value</em>, <em>interval_secs</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.utils.timeutils.IntervalIter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>start_value</strong> (<em>numeric</em>) &#8211; via <a class="reference internal" href="#eventmq.utils.timeutils.monotonic" title="eventmq.utils.timeutils.monotonic"><code class="xref py py-func docutils literal"><span class="pre">monotonic()</span></code></a> or <a class="reference internal" href="#eventmq.utils.timeutils.timestamp" title="eventmq.utils.timeutils.timestamp"><code class="xref py py-func docutils literal"><span class="pre">timestamp()</span></code></a></li>
+<li><strong>interval_secs</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="eventmq.utils.timeutils.IntervalIter.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#eventmq.utils.timeutils.IntervalIter.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.utils.timeutils.monotonic">
+<code class="descclassname">eventmq.utils.timeutils.</code><code class="descname">monotonic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.utils.timeutils.monotonic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (float) seconds since boot, or something close to it. This value
+will never count down so it&#8217;s useful for cases where DST would mess up
+time.time() arithmetic (e.g. heartbeats).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.utils.timeutils.seconds_until">
+<code class="descclassname">eventmq.utils.timeutils.</code><code class="descname">seconds_until</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.utils.timeutils.seconds_until" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of seconds until <cite>ts</cite> by subtracting it from
+time.time()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="eventmq.utils.timeutils.timestamp">
+<code class="descclassname">eventmq.utils.timeutils.</code><code class="descname">timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.utils.timeutils.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing.html" class="btn btn-neutral float-right" title="Contributing to EventMQ" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="messages.html" class="btn btn-neutral" title="messages – Message Utilities" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, EventMQ Contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
