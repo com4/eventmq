@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.1
+                0.3.4
               </div>
             
           
@@ -273,6 +273,28 @@ default location is used unless it has been overridden via <code class="docutils
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="eventmq.settings.reload_settings">
+<code class="descclassname">eventmq.settings.</code><code class="descname">reload_settings</code><span class="sig-paren">(</span><em>section</em>, <em>override_settings=None</em><span class="sig-paren">)</span><a class="headerlink" href="#eventmq.settings.reload_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload settings by resetting <code class="docutils literal"><span class="pre">conf</span></code> to defaults, loading settings from a
+file and overwriting any additional settings with what&#8217;s defined in the
+<code class="docutils literal"><span class="pre">override_settings</span></code> dict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The section of interest. See <code class="docutils literal"><span class="pre">_CONFIG_DEFS</span></code></li>
+<li><strong>override_settings</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; Dictionary containing any additional settings
+to override. The key should be the upper case config name.
+See: <a class="reference internal" href="#eventmq.settings.load_settings_from_dict" title="eventmq.settings.load_settings_from_dict"><code class="xref py py-func docutils literal"><span class="pre">load_settings_from_dict()</span></code></a> for more information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -294,7 +316,7 @@ default location is used unless it has been overridden via <code class="docutils
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, EventMQ Contributors.
+        &copy; Copyright 2017, EventMQ Contributors.
 
     </p>
   </div>

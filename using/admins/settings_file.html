@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.1
+                0.3.4
               </div>
             
           
@@ -91,8 +91,9 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Settings (eventmq.conf)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#global">Global</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#router">Router</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#scheduler">Scheduler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#job-manager">Job Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scheduler">Scheduler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#publisher">Publisher</a></li>
 </ul>
 </li>
 </ul>
@@ -247,9 +248,6 @@ account the amount of memory you have on the system and the average size of your
 message when defining this value.</p>
 </div>
 </div>
-<div class="section" id="scheduler">
-<h2>Scheduler<a class="headerlink" href="#scheduler" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="job-manager">
 <h2>Job Manager<a class="headerlink" href="#job-manager" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="connect-addr">
@@ -288,17 +286,17 @@ jobs are cpu intensive you will want to set this number to the number of cores
 you have or (cores - 1) to leave cycles for the os and other processes. This is
 something that will have to be tuned based on the jobs that are
 running. Grouping similar jobs in named queues will help you tune this number.</p>
-<div class="section" id="id1">
-<h4>Scheduler<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
+<div class="section" id="scheduler">
+<h2>Scheduler<a class="headerlink" href="#scheduler" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scheduler-connect-addr">
-<span id="id2"></span><h3>connect_addr<a class="headerlink" href="#scheduler-connect-addr" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>connect_addr<a class="headerlink" href="#scheduler-connect-addr" title="Permalink to this headline">¶</a></h3>
 <p>Default: <a class="reference external" href="tcp://127.0.0.1:47291">tcp://127.0.0.1:47291</a></p>
 <p>The address of the router&#8217;s <a class="reference internal" href="#router-frontend-listen-addr"><span class="std std-ref">frontend_listen_addr</span></a> to connect to.</p>
 </div>
 <div class="section" id="scheduler-queues">
-<span id="id3"></span><h3>queues<a class="headerlink" href="#scheduler-queues" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>queues<a class="headerlink" href="#scheduler-queues" title="Permalink to this headline">¶</a></h3>
 <p>Default: [[10, &#8220;default&#8221;]]</p>
 <p>Comma seperated list of queues to process jobs for with thier weights. This list
 must be valid JSON otherwise an error will be thrown.
@@ -335,17 +333,17 @@ jobs.</p>
 <h3>redis_password<a class="headerlink" href="#redis-password" title="Permalink to this headline">¶</a></h3>
 <p>Default: &lt;empty string&gt;</p>
 <p>Password to the Redis server</p>
+</div>
+</div>
 <div class="section" id="publisher">
-<h4>Publisher<a class="headerlink" href="#publisher" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
+<h2>Publisher<a class="headerlink" href="#publisher" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="publisher-frontend-listen-addr">
-<span id="id4"></span><h3>frontend_listen_addr<a class="headerlink" href="#publisher-frontend-listen-addr" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>frontend_listen_addr<a class="headerlink" href="#publisher-frontend-listen-addr" title="Permalink to this headline">¶</a></h3>
 <p>Default: <a class="reference external" href="tcp://127.0.0.1:47298">tcp://127.0.0.1:47298</a></p>
 <p>The address the publisher should listen on for client connections.</p>
 </div>
 <div class="section" id="publisher-backend-listen-addr">
-<span id="id5"></span><h3>backend_listen_addr<a class="headerlink" href="#publisher-backend-listen-addr" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>backend_listen_addr<a class="headerlink" href="#publisher-backend-listen-addr" title="Permalink to this headline">¶</a></h3>
 <p>Default: <a class="reference external" href="tcp://127.0.0.1:47299">tcp://127.0.0.1:47299</a></p>
 <p>The address the publisher should listen on for subscribers.</p>
 </div>
@@ -371,7 +369,7 @@ jobs.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, EventMQ Contributors.
+        &copy; Copyright 2017, EventMQ Contributors.
 
     </p>
   </div>

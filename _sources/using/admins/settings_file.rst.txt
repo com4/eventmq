@@ -119,10 +119,6 @@ no availabe slots the router will start buffering messages internally. Take into
 account the amount of memory you have on the system and the average size of your
 message when defining this value.
 
-*********
-Scheduler
-*********
-
 ***********
 Job Manager
 ***********
@@ -172,6 +168,7 @@ you have or (cores - 1) to leave cycles for the os and other processes. This is
 something that will have to be tuned based on the jobs that are
 running. Grouping similar jobs in named queues will help you tune this number.
 
+*********
 Scheduler
 *********
 
@@ -229,6 +226,7 @@ Default: <empty string>
 
 Password to the Redis server
 
+*********
 Publisher
 *********
 
